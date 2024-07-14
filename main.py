@@ -29,3 +29,8 @@ if __name__ =='__main__':
     job = ModelTraining(spark=spark, config=config, exec_time=exec_time)
     job.run()
 
+    # job make-predictions
+    job = MakePredictions(spark=spark, config=config, exec_time=exec_time, date="2020-02-01")
+    job.run()
+
+
