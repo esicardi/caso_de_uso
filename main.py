@@ -1,10 +1,12 @@
 from databricks.connect import DatabricksSession as SparkSession
 from databricks.sdk.core import Config
-
-from jobs.job_make_predictions import MakePredictions
-from jobs.job_model_training import ModelTraining
-from utils import read_yaml
 from datetime import datetime
+
+from jobs.job_model_training import ModelTraining
+from jobs.job_make_predictions import MakePredictions
+from jobs.job_evaluate_drift import EvaluateDrift
+from utils import read_yaml
+
 
 
 if __name__ =='__main__':
@@ -24,7 +26,6 @@ if __name__ =='__main__':
     """ 31 de enero >>  First execution """
 
     #job  model-training
-    job = ModelTraining()
+    job = ModelTraining(spark=spark, config=config, exec_time=exec_time)
+    job.run()
 
-    #job make-predicitions
-    job = MakePredictions()
