@@ -5,6 +5,8 @@ table:
   train: default.train
   test: default.test
   metrics: default.metrics
+  daily_predictions: default.daily_predictions
+  daily_features: default.daily_features
 
 modeling:
   seed: 99

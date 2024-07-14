@@ -33,4 +33,10 @@ if __name__ =='__main__':
     job = MakePredictions(spark=spark, config=config, exec_time=exec_time, date="2020-02-01")
     job.run()
 
+    """ 1 de febrero >> daily-execution """
+
+    # job evaluate-drift
+    job = EvaluateDrift(spark=spark, config=config, exec_time=exec_time, date="2020-02-02")
+    job.run()
+
 
